@@ -16,7 +16,7 @@ class FaceScrub(Dataset):
 
         if group == 'actors':
             if cropped:
-                root = os.path.join(root, 'actors_faces')
+                root = os.path.join(root, 'actor_faces')
             else:
                 root = os.path.join(root, 'actors/images')
             self.dataset = ImageFolder(root=root, transform=None)
@@ -25,19 +25,19 @@ class FaceScrub(Dataset):
 
         elif group == 'actresses':
             if cropped:
-                root = os.path.join(root, 'actresses_faces')
+                root = os.path.join(root, 'actress_faces')
             else:
-                root = os.path.join(root, 'actresses/images')
+                root = os.path.join(root, 'actress_faces')
             self.dataset = ImageFolder(root=root, transform=None)
             self.targets = self.dataset.targets
             self.name = 'facescrub_actresses'
 
         elif group == 'all':
             if cropped:
-                root_actors = os.path.join(root, 'actors_faces')
+                root_actors = os.path.join(root, 'actor_faces')
                 root_actresses = os.path.join(root, 'actresses_faces')
             else:
-                root_actors = os.path.join(root, 'actors/images')
+                root_actors = os.path.join(root, 'actor_faces')
                 root_actresses = os.path.join(root, 'actresses/images')
             dataset_actors = ImageFolder(root=root_actors, transform=None)
             target_transform_actresses = lambda x: x + len(dataset_actors.
