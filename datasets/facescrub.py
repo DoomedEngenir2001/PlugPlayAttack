@@ -34,8 +34,8 @@ class FaceScrub(Dataset):
 
         elif group == 'all':
             if cropped:
-                root_actors = os.path.join(root, 'actors/faces')
-                root_actresses = os.path.join(root, 'actresses/faces')
+                root_actors = os.path.join(root, 'actors_faces')
+                root_actresses = os.path.join(root, 'actresses_faces')
             else:
                 root_actors = os.path.join(root, 'actors/images')
                 root_actresses = os.path.join(root, 'actresses/images')
